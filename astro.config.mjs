@@ -29,9 +29,10 @@ import { remarkContent } from "./src/plugins/remark-content.mjs";
 import { rehypeImageWidth } from "./src/plugins/rehype-image-width.mjs";
 
 // https://astro.build/config
+const isProd = process.env.NODE_ENV === "production";
 export default defineConfig({
 	site: siteConfig.siteURL,
-	base: "/Mizuki",
+	base: isProd ? "/Mizuki/" : "/",
 	trailingSlash: "always",
 
 	output: "static",
