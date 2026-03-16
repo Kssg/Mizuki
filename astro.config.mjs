@@ -30,9 +30,10 @@ import rehypeExternalLinks from "rehype-external-links";
 import { remarkFixGithubAdmonitions } from "./src/plugins/remark-fix-github-admonitions.js";
 
 // https://astro.build/config
+const isProd = process.env.NODE_ENV === "production";
 export default defineConfig({
 	site: siteConfig.siteURL,
-	base: "/",
+	base: isProd ? "/Mizuki/" : "/",
 	trailingSlash: "always",
 
 	output: "static",
